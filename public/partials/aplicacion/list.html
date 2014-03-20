@@ -1,0 +1,103 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Aplicaciones</h4></div>
+  <div class="panel-body">
+  	<div class="row">
+	  	<div class="col-md-4 col-xs-12 pull-left">
+	  		<div class="input-group">
+	  			<a class="btn btn-default btn-md" href="#/aplicacion/create"><span class="glyphicon glyphicon-plus"></span> Agregar Nueva</a>  	
+	  		</div>
+	  		<br class="visible-xs" />
+	  	</div>
+		<div class="col-md-4 col-xs-12 pull-right">
+			<div class="input-group">
+			  <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+			  <input type="text" class="form-control" placeholder="Buscar" ng-model="query">
+			</div>			
+			<br />
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			    Estado <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+			    <li class="active">
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query=''">
+				      <span class="badge pull-right">{{ aplicaciones.length }}</span>
+				      <small>Todas</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Aprobado'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Aprobado').length}}</span>
+				      <small>Aprobadas</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Pendiente'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Pendiente').length}}</span>
+				      <small>Pendientes</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Rechazado'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Rechazado').length}}</span>
+				      <small>Rechazadas</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Lista de Espera'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Lista de Espera').length}}</span>
+				      <small>Lista de Espera</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='No lo va a hacer'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'No lo va a hacer').length}}</span>
+				      <small>No lo va a hacer</small>
+				    </a>
+				  </li>
+			  </ul>
+			</div>			
+		</div>
+	</div>
+  </div>
+</div>
+
+<table class="table table-striped table-hover">                                                            
+	<tr>	    
+	    <th>
+		    <a href="javascript:void(0);" ng-click="orderByField='nombre'; reverseSort = !reverseSort">Nombre
+		    	<span ng-show="orderByField == 'nombre'"><span class="glyphicon glyphicon-sort"></span></span>
+		    </a>
+		</th> 
+	    <th>
+	    	<a href="javascript:void(0);" ng-click="orderByField='correo_electronico'; reverseSort = !reverseSort">
+	    		Email
+		    	<span ng-show="orderByField == 'correo_electronico'"><span class="glyphicon glyphicon-sort"></span></span>
+		    </a>
+	    </th> 
+	    <th>
+	    	<a href="javascript:void(0);" ng-click="orderByField='telefono_celular'; reverseSort = !reverseSort">Celular
+		    	<span ng-show="orderByField == 'telefono_celular'"><span class="glyphicon glyphicon-sort"></span></span>
+		    </a>
+	    </th>
+	    <th>
+	    	<a href="javascript:void(0);" ng-click="orderByField='fecha_creacion'; reverseSort = !reverseSort">Fecha de Aplicación
+		    	<span ng-show="orderByField == 'fecha_creacion'"><span class="glyphicon glyphicon-sort"></span></span>
+		    </a>
+	    </th>
+	    <th>
+	    	<a href="javascript:void(0);" ng-click="orderByField='estado'; reverseSort = !reverseSort">Estado
+		    	<span ng-show="orderByField == 'estado'"><span class="glyphicon glyphicon-sort"></span></span>
+		    </a>
+	    </th>	    
+	    <th><p class="text-center">Editar</th>	    
+    </tr>
+	<tr ng-repeat="aplicacion in aplicaciones | filter:query |orderBy:orderByField:reverseSort">
+		<td><a href="#/aplicacion/{{aplicacion.id}}/edit">{{aplicacion.nombre +' '+aplicacion.apellidos}}</a></td>		
+		<td>{{aplicacion.correo_electronico}}</td>
+		<td>{{aplicacion.telefono_celular}}</td>
+		<td>{{aplicacion.fecha_creacion}}</td>
+		<td>{{aplicacion.estado}}</td>				
+		<td><a href="#/aplicacion/{{aplicacion.id}}/edit"><i class="glyphicon glyphicon-pencil center-block"></i></a></td>
+	</tr>
+</table>

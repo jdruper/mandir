@@ -1,0 +1,30 @@
+<div ng-controller="authenticationCtrl">
+<nav class="navbar navbar-default navSeparator" role="navigation">	
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">Yoga Mandir</a>
+	</div>
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="#/aplicaciones">Aplicaciones</a></li>
+		</ul>
+		<div class="navbar-header navbar-right">
+		<div class="dropdown navbar-text">
+  		
+  			<a href="javascript:function(e){e.preventDefault();}" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{username}} <b class="caret"></b></a>
+  		
+  		<ul class="dropdown-menu">
+            <li><a href="#">Configuraci&oacute;n</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:function(e){e.preventDefault();}" ng-click='logout();'>Salir</a></li>            
+          </ul>
+      </div>
+  	</div>
+	</div>
+</nav>
+</div>

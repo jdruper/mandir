@@ -5,6 +5,7 @@
 	},
     "require": {
         "mikecao/flight": ">=1.0.0",
-	"phpunit/phpunit": ">=1.0.0"
+	"phpunit/phpunit": ">=1.0.0",
+		"firebase/php-jwt": "dev-master"
     }
 }

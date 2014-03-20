@@ -1,0 +1,281 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Editar Aplicación</h4></div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 pull-left">
+        <div class="input-group">
+          <button ng-confirm-click="¿Está seguro que desea eliminar la aplicación?" confirmed-click="doRemove()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>          
+        </div>        
+      </div>    
+  </div>
+  </div>
+</div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 pull-left">
+              <div class="row">                              
+                <div class="col-md-12 col-sm-12 col-xs-12 center-block">                                      
+                      <p ng-show="mensaje!=''">{{mensaje}}</p>
+                      <img src="{{ aplicacion.img_url + '/' + aplicacion.imagen_thumbnail }}" alt="Fotografía" class="img-rounded thumbnail center-block">
+                </div>
+              </div>
+              <div class="row">                 
+                 <input type="text" ng-model="aplicacion.img_url" class="hidden" value="{{aplicacion.img_url}}">
+                 <input type="text" ng-model="aplicacion.imagen_original" class="hidden" value="{{aplicacion.imagen_original}}">
+                 <input type="text" ng-model="aplicacion.imagen_thumbnail" class="hidden" value="{{aplicacion.imagen_thumbnail}}">
+                 <div class="upload">
+                  <input type="file" ng-file-select="onFileSelect($files)" />
+                  Seleccionar...
+                 </div>
+                  <br />
+                  <!--<input type="file" ng-file-select="onFileSelect($files)" multiple>
+                  <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="" class="drop-box"
+                        ng-show="dropSupported">o arrastre sus archivos acá</div>
+                  <div ng-file-drop-available="dropSupported=true" 
+                        ng-show="!dropSupported">HTML5 Arrastrar Archivo no esta soportado</div>
+                        <br />
+                        -->
+                  Progreso: {{progress}}%                  
+                  <button ng-show="isUploading" ng-click="upload.abort()">Cancelar</button>
+              </div>
+      </div>
+      <div class="col-md-10">
+<form role="form">
+    <fieldset>    
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                  
+                    <div class="form-group">
+                      <label class="control-label" for="txtNombre">* Nombre</label>
+                      <input id="txtNombre" ng-model="aplicacion.nombre" tabindex="1" type="text" class="form-control" placeholder="Ingrese su Nombre" required autofocus>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                       <div class="form-group">
+                          <label class="control-label" for="txtApellidos">*Apellidos</label>                        
+                          <input id="txtApellidos" ng-model="aplicacion.apellidos" tabindex="2" type="text" placeholder="Ingrese sus Apellidos" class="form-control" required>
+                        </div>
+                </div>
+              </div>              
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="control-label"  for="txtCedula">*Cédula de Identidad</label>                          
+                      <input id="txtCedula" ng-model="aplicacion.cedula" tabindex="3" type="text" placeholder="Ingrese su cédula o pasaporte" class="form-control" required>
+                    </div>
+                  </div>                  
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="form-group">
+                          <label class="control-label" for="sltEstadoCivil">Estado Civil:</label>                          
+                            <select id="sltEstadoCivil" ng-model="aplicacion.estado_civil" tabindex="4" class="form-control">
+                              <option>Soltero/a</option>
+                              <option>Casado/a</option>
+                              <option>Divorciado/a</option>
+                              <option>Unión Libre</option>
+                            </select>                          
+                        </div>
+                </div>
+              </div>
+                <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                
+                    <!-- Text input-->
+                     <div class="form-group">
+                        <label class="control-label" for="txtNacionalidad">Nacionalidad</label>                          
+                        <input id="txtNacionalidad" ng-model="aplicacion.nacionalidad" tabindex="5" type="text" placeholder="Ingrese su Nacionalidad" class="form-control" >
+                      </div>
+                </div>              
+                <div class="col-md-6 col-sm-6 col-xs-12">                
+                    <div class="form-group">
+                          <label class="control-label" for="txtCorreo">*Correo Electrónico</label>                          
+                          <input id="txtCorreo" ng-model="aplicacion.correo_electronico" tabindex="6" type="email" placeholder="Ingrese su Correo Electrónico" class="form-control" required>
+                        </div>
+                </div>
+              </div>
+                <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                
+                      <!-- Text input-->
+<div class="form-group">
+                          <label class="control-label" for="txtTelefonoCasa">Teléfono Casa</label>                          
+                          <input id="txtTelefonoCasa" ng-model="aplicacion.telefono_casa" tabindex="7" type="text" placeholder="Ingrese su Teléfono de Casa" class="form-control">
+                        </div>                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">                  
+                        <div class="form-group">
+                          <label class="control-label" for="txtCelular">*Teléfono Celular</label>                          
+                            <input id="txtCelular" ng-model="aplicacion.telefono_celular" tabindex="8" type="text" placeholder="Ingrese su Teléfono Celular" class="form-control" required>
+                        </div>
+
+                </div>
+              </div>
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                
+                      <!-- Text input-->
+<div class="form-group">
+                          <label class="control-label" for="txtFechaNacimiento">Fecha de Nacimiento</label>                          
+                          <input id="txtFechaNacimiento" ng-model="aplicacion.fecha_nacimiento" tabindex="7" type="date" placeholder="Ingrese su Fecha de Nacimiento" class="form-control">
+                        </div>                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">                  
+                        <div class="form-group">
+                          <label class="control-label" for="sltEstado">Estado</label>                          
+                            <select id="sltEstado" ng-model="aplicacion.estado" tabindex="4" class="form-control">
+                              <option value="Pendiente">Pendiente</option>
+                              <option value="Aprobado">Aprobado</option>
+                              <option value="Lista de Espera">Lista de Espera</option>
+                              <option value="Rechazado">Rechazado</option>
+                              <option value="No lo va a hacer">No lo va a hacer</option>
+                            </select>                          
+                        </div>
+
+                </div>
+              </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">                        
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtDireccion">Dirección</label>
+                          <textarea class="form-control" tabindex="9" id="txtDireccion" ng-model="aplicacion.direccion"></textarea>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtEducacion">Educación/Profesión</label>
+                          <textarea class="form-control" tabindex="10" id="txtEducacion" ng-model="aplicacion.educacion_profesion"></textarea>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtEstadoSalud">Estado de Salud
+                          </label>
+                          <p class="small">Favor mencionar si padece o ha padecido alguna enfermedad importante, cirugías, si toma medicamentos, y condición actual.</p>
+                           <textarea class="form-control" tabindex="11" id="txtEstadoSalud" ng-model="aplicacion.estado_salud"></textarea>
+                        </div>
+
+<!-- Multiple Radios -->
+                        <div class="form-group">
+                          <div class="col-md-12 col-xs-12">
+                          <label class="control-label" for="rbgFuente">¿Dónde se enteró del curso?</label>
+                          </div>
+                          <div class="col-md-4 col-xs-12">
+                          <label class="radio" for="rbgFuente-0">
+                              <input type="radio" tabindex="12" ng-model="aplicacion.fuente" id="rbgFuente-0" value="Facebook" checked="checked" />
+                              Facebook
+                            </label>
+                            <label class="radio" for="rbgFuente-1">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-1" value="Amigo" />
+                              Amigo
+                            </label>
+                            <label class="radio" for="rbgFuente-2">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-2" value="Profesor de Yoga" />
+                              Profesor de Yoga
+                            </label>                            
+                          </div>
+                          <div class="col-md-4 col-xs-12">
+                            <label class="radio" for="rbgFuente-3">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-3" value="Internet" />
+                              Internet
+                            </label>
+                            <label class="radio" for="rbgFuente-4">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-4" value="Afiches" />  
+                              Afiches
+                            </label>
+                            <label class="radio" for="rbgFuente-5">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-5" value="Anuncio Publicitario" />
+                              Anuncio Publicitario
+                            </label>
+                          </div>
+                          <div class="col-md-4 col-xs-12">
+                            <label class="radio" for="rbgFuente-7">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-6" value="Asoyoga" />
+                              Asoyoga
+                            </label>                          
+                            <label class="radio" for="rbgFuente-8">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-6" value="Yoga Alliance" />
+                              Yoga Alliance
+                            </label>
+                            <label class="radio" for="rbgFuente-6">
+                              <input type="radio" ng-model="aplicacion.fuente" id="rbgFuente-6" value="Otro" />
+                              Otro
+                            </label>                                                    
+                          </div>
+                        </div>
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtFrecuencia">¿Desde hace cuánto tiempo practica Yoga? ¿Con qué frecuencia?</label>
+                          <textarea class="form-control" tabindex="13" id="txtFrecuencia" ng-model="aplicacion.frecuencia"></textarea>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtExperiencia">Experiencia</label>
+                          <p class="small">
+                           Mencione técnicas (si hay alguna en especial)
+                          </p>
+                          <textarea class="form-control" tabindex="14" id="txtExperiencia" ng-model="aplicacion.experiencia"></textarea>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label">¿Donde ha estudiado yoga?</label>
+                          <br />
+                          <br />
+                          <div id="divEstudios" ng:repeat="estudio in aplicacion.estudios">
+                          <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <p class="panel-title lead">&nbsp;<span>{{estudio.lugar}}</span>
+                              <!--<a id="aLugar1" href="javascript:void;"><span class="glyphicon glyphicon-remove-circle pull-right" title="Eliminar"></span></a>-->
+                            </p>                            
+                          </div>
+                          <div class="panel-body">                            
+                              <div class="input-group input-group-sm">
+                                <span class="input-group-addon">Lugar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <input type="text" class="form-control" tabindex="15" id="txtLugar1" placeholder="Ingrese el lugar" name="estudio.lugar" ng-model="estudio.lugar">
+                              </div>
+                              <div class="input-group input-group-sm"> 
+                                <span class="input-group-addon">Profesor</span>
+                                <input type="text" class="form-control" id="txtProfesor1" tabindex="16" placeholder="Ingrese el nombre" name="estudio.profesor" ng-model="estudio.profesor">
+                              </div>
+                              <div class="input-group input-group-sm">
+                                <span class="input-group-addon">Tiempo&nbsp;&nbsp;</span>
+                                <input type="text" class="form-control" id="txtTiempo1"  tabindex="17" placeholder="Ingrese la duración" name="estudio.tiempo" ng-model="estudio.tiempo">
+                              </div>                          
+                          </div>
+                        </div>
+                  </div>                          
+                          <!--<div class="text-right">
+                            <button type="button" class="btn btn-default btn-lg" title="Más Estudios" id="btnAgregarEstudios">
+                              <span class="glyphicon glyphicon-plus-sign"></span>                            
+                            </button>
+                          </div>-->
+                        </div>
+                                       
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                          <label class="control-label" for="rbtClases">¿Se dedica actualmente a dar clases de yoga?</label>
+                          <label class="radio inline" for="rbtClases-0">
+                              <input type="radio" tabindex="18" ng-model="aplicacion.da_clases" id="rbtClases-0" value="1" checked="checked">
+                              Sí
+                            </label>
+                            <label class="radio inline" for="rbtClases-1">
+                              <input type="radio" ng-model="aplicacion.da_clases" id="rbtClases-1" value="0">
+                              No
+                            </label>                          
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                          <label class="control-label" for="txtPrincipalesObjetivos">¿Cuáles son sus objetivos y principales intereses al participar en este entrenamiento?</label>
+                            <textarea class="form-control" tabindex="20" id="txtPrincipalesObjetivos" ng-model="aplicacion.objetivos"></textarea>
+                        </div>                        
+                        <div class="form-group text-right">
+                            <button id="btnGuardar" type="button" ng-click="doSave()" tabindex="22" class="btn btn-primary">Guardar</button>
+                        </div>                  
+              </div>
+            </div>          
+            </fieldset>
+          </form> 
+          </div>
+          </div>
+         </div> <!--container -->                
