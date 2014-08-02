@@ -1,30 +1,73 @@
 <div ng-controller="authenticationCtrl">
-<nav class="navbar navbar-default navSeparator" role="navigation">	
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="#">Yoga Mandir</a>
-	</div>
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav">
-			<li><a href="#/aplicaciones">Aplicaciones</a></li>
-		</ul>
-		<div class="navbar-header navbar-right">
-		<div class="dropdown navbar-text">
-  		
-  			<a href="javascript:function(e){e.preventDefault();}" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{username}} <b class="caret"></b></a>
-  		
-  		<ul class="dropdown-menu">
-            <li><a href="#">Configuraci&oacute;n</a></li>
-            <li class="divider"></li>
-            <li><a href="javascript:function(e){e.preventDefault();}" ng-click='logout();'>Salir</a></li>            
-          </ul>
+<!-- Header Start -->
+  <header class="header-4" id="header">
+      <div class="vd_top-menu-wrapper">
+        <div class="container">
+          <div class="vd_top-nav vd_nav-width">
+          <div class="vd_panel-header">
+          	<div class="logo">
+            	<a href="http://www.profesores.yoga-mandir.com">            	
+            	<img alt="logo" src="img/logo-mandir.png">
+            	</a>
+            </div>
+            <!-- logo -->
+            <div class="vd_panel-menu  hidden-sm hidden-xs">            		
+            </div>
+            <div class="vd_panel-menu left-pos visible-sm visible-xs">            		
+            </div>
+            <div class="vd_panel-menu visible-xs">
+              <a href="javascript:function(e){e.preventDefault();}" ng-click='logout();'>
+              <div class="menu-icon userIcon"><i class=" fa fa-sign-out"></i></div>  
+              </a>
+            </div>                                     
+            <!-- vd_panel-menu -->
+          </div>
+          <!-- vd_panel-header -->
+            
+          </div>    
+          <div class="vd_container">
+          	<div class="row">
+                <div class="col-xs-12">
+              		<div class="vd_mega-menu-wrapper">
+                    	<div class="vd_mega-menu pull-right">
+            				<ul class="mega-ul">    
+							    <li id="top-menu-profile" class="profile mega-li dropdown"> 
+							        <a href="#" class="mega-link dropdown-toggle"  data-toggle="dropdown"> 
+							            <!-- <span  class="mega-image">
+							                <img src="img/avatar/avatar.jpg" alt="example image" />               
+                              <img src="{{img_url}}" alt="profile image" 
+							            </span> -->
+							            <span class="mega-name">
+                              <span class="userIcon"><i class="fa fa-user"></i></span>
+							                {{username}} <i class="fa fa-caret-down fa-fw"></i> 
+							            </span>
+							        </a> 
+							      <div class="vd_mega-menu-content  width-xs-2  left-xs left-sm dropdown-menu" data-action="click-target">
+							        <div class="child-menu"> 
+							        	<div class="content-list content-menu">
+							                <ul class="list-wrapper pd-lr-10">                    
+							                    <li> <a href="javascript:function(e){e.preventDefault();}" ng-click='logout();'> <div class="menu-icon"><i class=" fa fa-sign-out"></i></div>  <div class="menu-text">Salir</div> </a> </li>
+							                    <li class="line"></li>                
+							                    <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-question-circle"></i></div> <div class="menu-text">Ayuda</div> </a> </li>							                    
+							                </ul>
+							            </div> 
+							        </div> 
+							      </div>     
+							  
+							    </li>                   
+							</ul>
+							<!-- Head menu search form ends --> 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- container --> 
       </div>
-  	</div>
-	</div>
-</nav>
+      <!-- vd_primary-menu-wrapper --> 
+
+  </header>
+  <!-- Header Ends --> 
 </div>

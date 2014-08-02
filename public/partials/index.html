@@ -1,35 +1,145 @@
-<h1>Hello, mandir-admin</h1>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet rutrum ante. Etiam sed sem libero. Maecenas convallis, est eu consectetur hendrerit, nibh nunc rhoncus risus, sit amet pellentesque tortor massa ac sem. Nulla scelerisque sit amet ante at fringilla. Curabitur fermentum tortor eget ante condimentum mattis. Donec non augue elit. Vivamus vel viverra nunc. Morbi tincidunt lobortis consequat. Praesent non nibh faucibus, pharetra velit varius, pulvinar nisl. Curabitur commodo nibh vel dui tempus, ut aliquet magna fermentum. Donec dignissim pellentesque pharetra. Sed quis sollicitudin metus, eget ullamcorper leo. Vestibulum vitae erat a orci euismod ultricies. Vestibulum varius lacus a pretium fringilla.
+<div class="content">
+  <div class="clearfix pd-20" >
+    <div class="container">
+      <div class="vd_content clearfix">
+        <div class="row mgtp-20">
 
-Maecenas tincidunt vestibulum sodales. Mauris consequat sem a sem dignissim rutrum. Sed sit amet dolor in quam pharetra hendrerit. Vestibulum imperdiet tincidunt justo, ut ultricies orci fringilla ut. Nulla in mollis turpis. Pellentesque ultrices nec nisl quis viverra. Mauris non sapien lacinia, porttitor turpis eu, auctor magna. Pellentesque vitae pulvinar neque. Praesent condimentum lacus vel blandit tempor.
+		<div class="col-md-4">
+            <div class="panel widget light-widget panel-bd-top vd_bdt-black">
+              <div class="panel-heading no-title"> </div>
+              <div class="panel-body">
+                <h2 class="mgtp--5"><i class="append-icon fa fa-search vd_blue"></i> B&uacute;squeda</h2>
+                <hr />
+                <div>
+                  <div class="form-group height-20">
+	                    <!-- <label class="col-sm-3 control-label">Nombre</label> -->
+	                    <div class="col-sm-12 controls">
+	                    	<div class="row mgbt-xs-0">
+	                        	<div class="col-xs-12">	                                
+                                    <div class="vd_input-wrapper light-theme form-radius">
+                                      <span class="menu-icon"> <i class="fa fa-user" style="color:#555555"></i> </span>
+                                      <input type="text" ng-model="filtro.nombre_completo" placeholder="Nombre o apellido">
+                                    </div>
+	                            </div>
+	                            <!-- col-xs-12 -->	                                
+	                        </div>
+	                        <!-- row --> 
+	                    </div>
+	                    <!-- col-sm-10 --> 
+	                </div>
+	                <!-- form-group -->
+                  <br />
+                  <div class="form-group height-20">
+                      <!-- <label class="col-sm-3 control-label">Regi&oacute;n</label> -->
+                      <div class="col-sm-12 controls">
+                        <div class="row mgbt-xs-0">
+                            <div class="col-xs-12">
+                              <div class="input-group input-border form-radius"> 
+                                  <span class="input-group-addon no-bd no-bg"><i class="icon icon-earth"></i></span>
+                                  <select ng-model="filtro.region" class="select-border light-theme">
+                                    <option value="">--Regi&oacute;n--</option>
+                                    <option>San Jos&eacute; Este</option>
+                                    <option>San Jos&eacute; Oeste</option>
+                                    <option>Alajuela</option>
+                                    <option>Cartago</option>
+                                    <option>Guanacaste</option>
+                                    <option>Heredia</option>
+                                    <option>Puntarenas</option>
+                                    <option>Limon</option>
+                                  </select>                                  
+                                </div>
+                              </div>
+                              <!-- col-xs-12 -->                                  
+                          </div>
+                          <!-- row --> 
+                      </div>
+                      <!-- col-sm-10 --> 
+                  </div>
+                  <!-- form-group -->
+                  <br />
+                  <div class="form-group height-20">
+                      <!-- <label class="col-sm-3 control-label">Certificación</label> -->
+                      <div class="col-sm-12 controls">
+                        <div class="row mgbt-xs-0">
+                            <div class="col-xs-12">
+                            <div class="input-group input-border form-radius"> 
+                                  <span class="input-group-addon no-bd no-bg"><i class="icon icon-graduation"></i></span>
+                                  <select ng-model="filtro.certificaciones" class="select-border light-theme">
+                                    <option value="">--Certificaci&oacute;n--</option>
+                                    <option value="300">PC-300 Horas</option>
+                                    <option value="400">PC-400 Horas</option>
+                                  </select>
+                                  </div>
+                              </div>
+                              <!-- col-xs-12 -->                                  
+                          </div>
+                          <!-- row --> 
+                      </div>
+                      <!-- col-sm-10 --> 
+                  </div>
+                  <!-- form-group -->
+                </div>
+              </div>
+            </div>
+            <!-- Panel Widget --> 
+            
+          </div>
+          <!-- col-md-4 --> 
 
-In lacinia dolor quis eleifend cursus. Praesent congue est sit amet enim ultricies, at aliquet magna scelerisque. Pellentesque et ultricies nunc, ac tincidunt ante. Nullam tincidunt fermentum dui, id convallis tellus eleifend in. Nam sit amet est quam. Nullam nec porta ante. Quisque gravida mattis ipsum, nec lobortis nisl sollicitudin et. Morbi sed molestie tortor. Vestibulum nibh eros, vestibulum at posuere egestas, aliquam eget tellus. Donec id ante a metus accumsan mollis.
-
-Etiam mollis imperdiet metus et viverra. Nunc pellentesque posuere sem, ac dapibus mi consectetur id. Ut pretium hendrerit elit. Morbi posuere ultricies arcu, quis viverra metus suscipit sit amet. Etiam accumsan mi odio, vitae auctor lacus vestibulum consequat. Maecenas nec justo gravida, cursus orci a, accumsan erat. Suspendisse sit amet lorem porttitor, commodo velit a, volutpat neque. Suspendisse ultrices molestie pretium. Etiam a tempor leo. Vivamus fermentum magna non nibh sagittis, id tincidunt ante dictum. Curabitur nec aliquam lacus, a malesuada libero. Sed condimentum neque enim, sed rutrum turpis euismod non.
-
-Morbi fringilla pharetra lacus vitae placerat. Quisque eu mattis augue, eget aliquam quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis tortor libero, fringilla sed condimentum ut, cursus ut ante. Sed lacus lectus, placerat vel vestibulum id, sodales nec mauris. Nam ac elit ullamcorper, consequat neque aliquet, tempus est. Nunc convallis enim sit amet magna vulputate vestibulum. Pellentesque ullamcorper arcu ac enim vehicula ornare. Praesent sagittis lacinia quam eu luctus. Ut vulputate velit imperdiet, iaculis arcu varius, lobortis quam. Donec et convallis mauris. Suspendisse ultrices, tortor ut sodales dictum, nisi eros consectetur urna, vel vehicula felis lacus non nibh. Vivamus neque dui, euismod quis arcu eu, adipiscing lobortis purus. Pellentesque tellus orci, gravida vel felis ac, facilisis faucibus dolor. Quisque sollicitudin gravida enim.
-
-Nulla facilisi. Sed pretium elit a quam sagittis, vel adipiscing libero dictum. Cras pellentesque tincidunt tellus, eget sollicitudin diam facilisis et. Sed bibendum et tellus et suscipit. Curabitur at dui leo. Maecenas suscipit gravida nunc blandit porttitor. Curabitur nunc urna, scelerisque sit amet nisi ultricies, tristique tristique ante. Phasellus imperdiet at ligula vel ultrices. Mauris mollis pulvinar pharetra. Proin lorem nisi, pellentesque a auctor eu, rutrum eu lectus. Morbi vestibulum nec libero vel lobortis. Fusce ornare dui id mi viverra, eget dictum purus tincidunt. Pellentesque aliquet faucibus viverra. Quisque eget viverra nibh. Maecenas ac tincidunt libero.
-
-Nam at lectus magna. Nullam egestas nisi id lectus pulvinar, eu hendrerit augue congue. Duis convallis fermentum cursus. Suspendisse potenti. Nunc condimentum dolor vel facilisis convallis. Integer eget turpis elit. Quisque sodales vestibulum suscipit. Sed consequat suscipit accumsan. Ut vel commodo dui, et eleifend diam. Aenean et elementum nibh. Vivamus vel luctus turpis, id scelerisque enim. Praesent blandit quam eu eros hendrerit volutpat. Maecenas nec molestie mi, et consectetur metus. In tempor luctus libero vel porta. Sed elit neque, rhoncus id nunc interdum, elementum rutrum mi. Ut condimentum, lectus vel interdum gravida, augue enim congue lorem, tempor interdum ipsum arcu id nibh.
-
-Integer eget consectetur risus. Nulla facilisi. Vivamus sagittis tincidunt nulla ut rhoncus. Praesent sit amet lacus in tellus ullamcorper condimentum sed et leo. Phasellus vitae eleifend ligula. Sed eu accumsan tortor. Aliquam ut commodo nunc, a ullamcorper lacus. Vestibulum in sagittis ligula. Nullam ornare elementum est id consectetur. Ut leo tellus, ultrices nec commodo quis, viverra tincidunt lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ac commodo augue, et suscipit dolor.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet rutrum ante. Etiam sed sem libero. Maecenas convallis, est eu consectetur hendrerit, nibh nunc rhoncus risus, sit amet pellentesque tortor massa ac sem. Nulla scelerisque sit amet ante at fringilla. Curabitur fermentum tortor eget ante condimentum mattis. Donec non augue elit. Vivamus vel viverra nunc. Morbi tincidunt lobortis consequat. Praesent non nibh faucibus, pharetra velit varius, pulvinar nisl. Curabitur commodo nibh vel dui tempus, ut aliquet magna fermentum. Donec dignissim pellentesque pharetra. Sed quis sollicitudin metus, eget ullamcorper leo. Vestibulum vitae erat a orci euismod ultricies. Vestibulum varius lacus a pretium fringilla.
-
-Maecenas tincidunt vestibulum sodales. Mauris consequat sem a sem dignissim rutrum. Sed sit amet dolor in quam pharetra hendrerit. Vestibulum imperdiet tincidunt justo, ut ultricies orci fringilla ut. Nulla in mollis turpis. Pellentesque ultrices nec nisl quis viverra. Mauris non sapien lacinia, porttitor turpis eu, auctor magna. Pellentesque vitae pulvinar neque. Praesent condimentum lacus vel blandit tempor.
-
-In lacinia dolor quis eleifend cursus. Praesent congue est sit amet enim ultricies, at aliquet magna scelerisque. Pellentesque et ultricies nunc, ac tincidunt ante. Nullam tincidunt fermentum dui, id convallis tellus eleifend in. Nam sit amet est quam. Nullam nec porta ante. Quisque gravida mattis ipsum, nec lobortis nisl sollicitudin et. Morbi sed molestie tortor. Vestibulum nibh eros, vestibulum at posuere egestas, aliquam eget tellus. Donec id ante a metus accumsan mollis.
-
-Etiam mollis imperdiet metus et viverra. Nunc pellentesque posuere sem, ac dapibus mi consectetur id. Ut pretium hendrerit elit. Morbi posuere ultricies arcu, quis viverra metus suscipit sit amet. Etiam accumsan mi odio, vitae auctor lacus vestibulum consequat. Maecenas nec justo gravida, cursus orci a, accumsan erat. Suspendisse sit amet lorem porttitor, commodo velit a, volutpat neque. Suspendisse ultrices molestie pretium. Etiam a tempor leo. Vivamus fermentum magna non nibh sagittis, id tincidunt ante dictum. Curabitur nec aliquam lacus, a malesuada libero. Sed condimentum neque enim, sed rutrum turpis euismod non.
-
-Morbi fringilla pharetra lacus vitae placerat. Quisque eu mattis augue, eget aliquam quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis tortor libero, fringilla sed condimentum ut, cursus ut ante. Sed lacus lectus, placerat vel vestibulum id, sodales nec mauris. Nam ac elit ullamcorper, consequat neque aliquet, tempus est. Nunc convallis enim sit amet magna vulputate vestibulum. Pellentesque ullamcorper arcu ac enim vehicula ornare. Praesent sagittis lacinia quam eu luctus. Ut vulputate velit imperdiet, iaculis arcu varius, lobortis quam. Donec et convallis mauris. Suspendisse ultrices, tortor ut sodales dictum, nisi eros consectetur urna, vel vehicula felis lacus non nibh. Vivamus neque dui, euismod quis arcu eu, adipiscing lobortis purus. Pellentesque tellus orci, gravida vel felis ac, facilisis faucibus dolor. Quisque sollicitudin gravida enim.
-
-Nulla facilisi. Sed pretium elit a quam sagittis, vel adipiscing libero dictum. Cras pellentesque tincidunt tellus, eget sollicitudin diam facilisis et. Sed bibendum et tellus et suscipit. Curabitur at dui leo. Maecenas suscipit gravida nunc blandit porttitor. Curabitur nunc urna, scelerisque sit amet nisi ultricies, tristique tristique ante. Phasellus imperdiet at ligula vel ultrices. Mauris mollis pulvinar pharetra. Proin lorem nisi, pellentesque a auctor eu, rutrum eu lectus. Morbi vestibulum nec libero vel lobortis. Fusce ornare dui id mi viverra, eget dictum purus tincidunt. Pellentesque aliquet faucibus viverra. Quisque eget viverra nibh. Maecenas ac tincidunt libero.
-
-Nam at lectus magna. Nullam egestas nisi id lectus pulvinar, eu hendrerit augue congue. Duis convallis fermentum cursus. Suspendisse potenti. Nunc condimentum dolor vel facilisis convallis. Integer eget turpis elit. Quisque sodales vestibulum suscipit. Sed consequat suscipit accumsan. Ut vel commodo dui, et eleifend diam. Aenean et elementum nibh. Vivamus vel luctus turpis, id scelerisque enim. Praesent blandit quam eu eros hendrerit volutpat. Maecenas nec molestie mi, et consectetur metus. In tempor luctus libero vel porta. Sed elit neque, rhoncus id nunc interdum, elementum rutrum mi. Ut condimentum, lectus vel interdum gravida, augue enim congue lorem, tempor interdum ipsum arcu id nibh.
-
-Integer eget consectetur risus. Nulla facilisi. Vivamus sagittis tincidunt nulla ut rhoncus. Praesent sit amet lacus in tellus ullamcorper condimentum sed et leo. Phasellus vitae eleifend ligula. Sed eu accumsan tortor. Aliquam ut commodo nunc, a ullamcorper lacus. Vestibulum in sagittis ligula. Nullam ornare elementum est id consectetur. Ut leo tellus, ultrices nec commodo quis, viverra tincidunt lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ac commodo augue, et suscipit dolor.
-</p>
+          
+          <div class="col-md-8">
+            <div class="panel widget light-widget panel-bd-top">
+              <div class="panel-heading no-title"> </div>
+              <div class="panel-body">
+                <h2 class="mgtp--5"><i class="append-icon fa fa-users vd_blue"></i> Profesores Certificados</h2>
+                <hr />
+                <div class="content-grid column-xs-2 column-sm-3 height-xs-4">	
+           <div data-rel="scroll">
+               <ul class="list-wrapper">               		
+               	<!-- <li>               	
+               <div class="gallery-item width2 filter-1"> <a href="img/avatar/big.jpg" data-rel="prettyPhoto[2]"> <img alt="example image" src="img/photos/01.jpg">
+                <div class="bg-cover"></div>
+                </a>
+                <div class="vd_info">
+                  <h3 class="mgbt-xs-15"><span class="font-semibold">Felicious</span> de louis amigos</h3>
+                  <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="img/photos/01.jpg"  data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a> <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a> <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a> 
+                </div>
+              </div>              
+               	</li> -->
+                    <li ng-repeat="perfil in perfiles | filter: filtro"> 
+                    	<a href="#/perfil/{{perfil.id}}">                    	
+                    		<div class="menu-icon imagen-perfil" style="width:95px; height:142px; background-image:url('{{perfil.img_url}}');">                    		
+                    		</div> 
+                    </a>
+                        <div class="menu-text"> <a href="#/perfil/{{perfil.id}}">{{perfil.nombre + ' ' +perfil.apellidos}}</a>
+                            <div class="menu-info">
+                                <div class="menu-date">{{perfil.region}}</div>
+                                <!-- <div class="menu-action">
+                                    <span class="menu-action-icon vd_green vd_bd-green" data-original-title="Approve" data-toggle="tooltip" data-placement="bottom">
+                                        <i class="fa fa-list-alt"></i>
+                                    </span> 
+                                    <span class="menu-action-icon vd_red vd_bd-green" data-original-title="Reject" data-toggle="tooltip" data-placement="bottom">
+                                        <i class="fa fa-camera-retro"></i>
+                                    </span>                                                                                                                   
+                                </div>                                 -->
+                            </div>
+                        </div> 
+                     </li>               
+               </ul>
+               </div>               
+           </div>
+              </div>
+            </div>
+            <!-- Panel Widget --> 
+            
+          </div>
+          <!-- col-md-8 -->
+                            
+        </div>
+        <!--row --> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Middle Content End --> 

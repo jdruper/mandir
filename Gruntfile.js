@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				options: {
 					beautify: true
 				},
-				files: {
+				files: {					
 					"public/js/app.js": [ 'js-src/**/*.js' ]
 				}
 			},
@@ -24,7 +24,11 @@ module.exports = function(grunt) {
                         'bower_components/angular-resource/angular-resource.js',
                         'bower_components/angular-route/angular-route.js',
                         'bower_components/ng-file-upload/angular-file-upload.min.js',
-						 'bower_components/bootstrap/dist/js/bootstrap.js', 
+						'bower_components/bootstrap/dist/js/bootstrap.js',
+						'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+						'bower_components/autogrowtextarea/jquery.autogrowtextarea.min.js',						
+						'bower_components/jquery/jquery.validate.min.js',
+						'bower_components/prettyPhoto/js/jquery.prettyPhoto.js'												
 					]
 				}
 			}
@@ -37,6 +41,13 @@ module.exports = function(grunt) {
 				files: {
 					"public/css/vendor.css": [
 						'bower_components/bootstrap/less/bootstrap.less', 
+						'bower_components/vendroid/font-awesome.min.css.less',
+						'bower_components/vendroid/font-entypo.css.less',
+						'bower_components/vendroid/fonts.css.less',
+						'bower_components/vendroid/theme.min.less',
+						'bower_components/vendroid/chrome.css.less',						
+						'bower_components/vendroid/theme-responsive.min.less',												
+						'bower_components/prettyPhoto/css/prettyPhoto.css'												
 					]
 
 				}

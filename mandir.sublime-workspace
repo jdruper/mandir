@@ -1,0 +1,454 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cate",
+				"categoria"
+			],
+			[
+				"id",
+				"id_categoria_padre"
+			],
+			[
+				"estado",
+				"estado_actual"
+			],
+			[
+				"fe",
+				"fecha_entrega"
+			],
+			[
+				"for",
+				"for	for …"
+			],
+			[
+				"auten",
+				"authenticationStorage"
+			],
+			[
+				"auh",
+				"authenticationStorage"
+			],
+			[
+				"my",
+				"myPublicFunction"
+			],
+			[
+				"ani",
+				"animation_speed_show"
+			],
+			[
+				"result",
+				"resultado"
+			],
+			[
+				"guar",
+				"guardarDatos"
+			],
+			[
+				"menu",
+				"menuListItems"
+			],
+			[
+				"men",
+				"menuListItems"
+			],
+			[
+				"id_usuario",
+				"id_usuario_responsable"
+			],
+			[
+				"usuario",
+				"usuario_asigno"
+			],
+			[
+				"usu",
+				"usuario_asigno"
+			],
+			[
+				"idu",
+				"id_usuario_asigno"
+			],
+			[
+				"user",
+				"userId"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"save ",
+				"Project: Save As"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/jose/Desktop/flightangular/js-src/tarea/tareaStorage.js",
+		"/home/jose/Desktop/flightangular/server/lib/Operacion/Storage.php",
+		"/home/jose/Desktop/flightangular/server/lib/Categoria_Operacion/Controller.php",
+		"/home/jose/Desktop/flightangular/server/lib/Operacion/Controller.php",
+		"/home/jose/Desktop/flightangular/public/index.php",
+		"/home/jose/Desktop/flightangular/js-src/operacion/operacionStorage.js",
+		"/home/jose/Desktop/flightangular/js-src/operacion/operacionListController.js",
+		"/home/jose/Desktop/flightangular/js-src/tarea/tareaListController.js",
+		"/home/jose/Desktop/flightangular/public/partials/tarea/list.html",
+		"/home/jose/Desktop/flightangular/js-src/app.js",
+		"/home/jose/Desktop/flightangular/public/partials/tarea/create.html",
+		"/home/jose/Desktop/flightangular/public/partials/tarea/edit.html",
+		"/home/jose/Desktop/flightangular/js-src/authentication/authenticationController.js",
+		"/home/jose/Desktop/flightangular/public/partials/operacion/list.html",
+		"/home/jose/Desktop/flightangular/public/partials/nav.html",
+		"/home/jose/Desktop/flightangular/js-src/operacion/operacionController.js",
+		"/home/jose/Desktop/flightangular/server/lib/Categoria_Operacion/Storage.php",
+		"/home/jose/Desktop/flightangular/server/lib/Tarea/Storage.php",
+		"/home/jose/Desktop/flightangular/Gruntfile.js",
+		"/home/jose/Desktop/flightangular/server/lib/Common/simplecms-config.php",
+		"/home/jose/Desktop/flightangular/bower_components/autogrowtextarea/jquery.autogrowtextarea.min.js",
+		"/home/jose/Desktop/flightangular/js-src/operacion/operacion.js",
+		"/home/jose/Desktop/flightangular/public/.htaccess",
+		"/home/jose/Desktop/flightangular/js-src/aplicacion/aplicacionListController.js",
+		"/home/jose/Desktop/flightangular/js-src/tarea/tareaController.js",
+		"/home/jose/Desktop/flightangular/js-src/tarea/tarea.js",
+		"/home/jose/Desktop/flightangular/public/partials/aplicacion/list.html",
+		"/home/jose/Desktop/flightangular/less-src/styles.less",
+		"/home/jose/Desktop/flightangular/server/views/app.php",
+		"/home/jose/Desktop/flightangular/js-src/main.js",
+		"/home/jose/Desktop/flightangular/server/views/login.php",
+		"/home/jose/Desktop/flightangular/js-src/comunication/comunicationService.js",
+		"/home/jose/Desktop/flightangular/js-src/comunication/comunicationController.js",
+		"/home/jose/Desktop/flightangular/js-src/comunication/comunication.js",
+		"/home/jose/Desktop/flightangular/server/lib/Authentication/Session.php",
+		"/home/jose/Desktop/flightangular/server/lib/Aplicacion/Storage.php",
+		"/home/jose/Desktop/flightangular/server/lib/Authentication/Storage.php",
+		"/home/jose/Desktop/flightangular/public/css/styles.css",
+		"/home/jose/Desktop/flightangular/server/lib/Authentication/Controller.php",
+		"/home/jose/Desktop/flightangular/js-src/authentication/authenticationService.js",
+		"/home/jose/Desktop/flightangular/server/lib/Tarea/Controller.php",
+		"/home/jose/Desktop/RogerAvila_Examen2/js/logica.js",
+		"/media/TODO/Workspace/Freelance/Mandir/MandirTecherDirectory/Angular + PHP/api/index.php",
+		"/media/TODO/Workspace/Freelance/angular-app/server/server.js",
+		"/home/jose/Desktop/flightangular/js-src/aplicacion/aplicacionController.js",
+		"/home/jose/Desktop/flightangular/public/partials/aplicacion/edit.html",
+		"/home/jose/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/jose/Desktop/flightangular/public/notification.html",
+		"/home/jose/Desktop/luisAntonioVega_Examen#2/js/examen.js",
+		"/home/jose/Desktop/luisAntonioVega_Examen#2/js/logica.js",
+		"/home/jose/Desktop/MelissaRosales_Examen2/js/logica1.js",
+		"/home/jose/Desktop/MelissaRosales_Examen2/js/logica.js",
+		"/home/jose/Desktop/EstebanGomez_Examen2/index.html",
+		"/home/jose/Desktop/LuisVargas_Examen2/js/logica.js",
+		"/home/jose/Desktop/LuisVargas_Examen2/js/formValidation.js",
+		"/home/jose/Desktop/LuisVargas_Examen2/js/map.js",
+		"/home/jose/Desktop/EstebanGomez_Examen2/js/editcheck.js",
+		"/home/jose/Desktop/EstebanGomez_Examen2/js/main.js",
+		"/home/jose/Desktop/EstebanGomez_Examen2/js/menu.js",
+		"/home/jose/Desktop/CAROLINABORGE_Examen 2/js/logica.js",
+		"/home/jose/Desktop/Examen 2/index.html",
+		"/home/jose/Desktop/Examen 2/js/jquery.js",
+		"/home/jose/Desktop/Examen 2/js/logica.js",
+		"/home/jose/Desktop/carolinaAzofeifa_Examen2/Examen 2/index.html",
+		"/home/jose/Desktop/carolinaAzofeifa_Examen2/Examen 2/js/contactForm.js",
+		"/home/jose/Desktop/carolinaAzofeifa_Examen2/Examen 2/js/logica.js",
+		"/home/jose/Desktop/Laboratorio1CarolinaAzofeifaCRBolas/js/logica.js",
+		"/home/jose/Desktop/diegomoraga_Examen2/js/logica.js",
+		"/home/jose/Desktop/Examen 2_Adrian Obregon/js/logica.js",
+		"/home/jose/Desktop/ExamenII_Melannie_Sandi_R/js/logic.js",
+		"/home/jose/Desktop/Revientabolas2/js/logica.js",
+		"/home/jose/Desktop/RogerAvila_Quiz2/Accordion/js/logica.js",
+		"/home/jose/Desktop/Accordion/js/logica.js",
+		"/home/jose/Desktop/EstebanGomez_Quiz2/js/logica.js",
+		"/home/jose/Desktop/LuisVargas_Quiz2/js/logica.js",
+		"/home/jose/Desktop/LuisVargas_Quiz2/css/style.css",
+		"/home/jose/Desktop/MelissaRosales_Quiz2/js/logica.js",
+		"/home/jose/Desktop/ErickSanchez_Quiz2/js/logica.js",
+		"/home/jose/.cache/.fr-iC6Cgx/js/logica.js",
+		"/home/jose/Desktop/Revienta Bolas/js/logica.js",
+		"/home/jose/Desktop/AzofeifaCarolinaQuiz2/js/logica.js",
+		"/home/jose/Desktop/CarolinaBorge Quiz 2/js/logica.js",
+		"/home/jose/Desktop/DiegoVargas_Quiz2/js/logica.js",
+		"/home/jose/Desktop/tarea progra 2/Ejercicio No.2/js/logic.js",
+		"/home/jose/Desktop/Billy Perez Tarea 2/js/logic.js",
+		"/home/jose/Desktop/Tarea#2-Progra/js/logica.js",
+		"/home/jose/Desktop/TAREA #2/js/logic.js",
+		"/home/jose/Desktop/Tarea #2 - Christian Sibaja/Ejercicio #1/js/logica.js",
+		"/home/jose/Desktop/Tarea #2 - Christian Sibaja/Ejercicio #2/js/logica.js",
+		"/home/jose/Desktop/tarea2/js/logic.js",
+		"/home/jose/Desktop/tarea progra 2/js/script1.js",
+		"/home/jose/Desktop/tarea progra 2/js/script2.js",
+		"/home/jose/Desktop/tarea progra 2/index.html",
+		"/home/jose/Desktop/MelannieSandi_Quiz2/js/logica.js",
+		"/home/jose/Desktop/Quiz#2_AdrianObregon/js/logica.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/AJAX/js/logica.js",
+		"/home/jose/Desktop/tarea 1/js/logic.js",
+		"/home/jose/Desktop/tareas web dinamica/ale miranda/steven molina tarea 2/js/logica.js",
+		"/home/jose/Desktop/tarea progra 2/Ejercicio No.1/js/logic.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/AJAX/data/schedule.json",
+		"/media/TODO/Workspace/Programación Web Dinámica/AJAX/index.html",
+		"/home/jose/Desktop/ModalDialog_KeilynSibaja/js/logica_ModalDialog.js",
+		"/home/jose/Desktop/tareas web dinamica/nancy/Tarea 1/Index.html",
+		"/home/jose/Desktop/tareas web dinamica/nancy/Tarea 1/js/logic.js",
+		"/home/jose/Desktop/ModalDialog_KeilynSibaja/js/ModalDialog.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Base/index.html",
+		"/home/jose/Desktop/flightangular/bower_components/bootstrap/less/list-group.less",
+		"/home/jose/Desktop/flightangular/bower.json",
+		"/home/jose/Desktop/flightangular/public/css/vendor.css",
+		"/home/jose/Desktop/flightangular/bower_components/bootstrap/README.md",
+		"/home/jose/Desktop/flightangular/bower_components/bootstrap/less/bootstrap.less",
+		"/home/jose/Desktop/jquery-boilerplate-master/src/jquery.boilerplate.js",
+		"/home/jose/Desktop/module.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/js/logica.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/js/modalDialog.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/js/modalDialog.min.js",
+		"/home/jose/Desktop/module.min.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/js/pasos.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/index.html",
+		"/media/TODO/Workspace/Programación Web Dinámica/Dialog/css/style.css",
+		"/home/jose/Desktop/flightangular/package.json",
+		"/home/jose/Desktop/flightangular/composer.json",
+		"/home/jose/Desktop/prueba.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Menu jQuery/js/logica.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Menu jQuery/js/menu.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/DragNDrop V2/js/logica.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Tooltip Plugin/js/tooltip.js",
+		"/media/TODO/Workspace/Programación Web Dinámica/Tooltip Plugin/css/style.css"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"filter",
+			"estado_edit",
+			"tipo_tarea",
+			"NG-CLICK",
+			"todos",
+			"get",
+			"get_user",
+			"id_usuario",
+			"form",
+			"();\"",
+			"form",
+			"forem",
+			"form",
+			"ng-click",
+			"agregar",
+			"FImprimirEnPantalla",
+			"FVolumen",
+			"ng-click",
+			"			\n",
+			"success",
+			"list-group-item",
+			"list-group-item-warning",
+			"list-group-item",
+			"list-group-item-warning",
+			"list-group-item",
+			"<",
+			"filter",
+			"open",
+			"get_user",
+			"RouteInsertReference",
+			"rocess_response",
+			" rocess_response",
+			" process_response",
+			"internal",
+			"login",
+			"var",
+			"var_dump",
+			"init",
+			"_init"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tarea.id_usuario_asigno != user_id",
+			"imprimirEnPantalla",
+			"volumen"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 142.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "mandir.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Desktop/flightangular/mandir.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

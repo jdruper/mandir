@@ -1,5 +1,5 @@
 <?php
-    define('DB_NAME', 'ntilde_mandir_td');
+    define('DB_NAME', 'ntilde_mandir_td_test');
     define('DB_USER', 'ntilde_td01');
     define('DB_PASSWORD', 'copperbed19');
     define('DB_HOST', '192.185.5.234');

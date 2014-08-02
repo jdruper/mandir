@@ -1,5 +1,5 @@
 aplicacionController = angular.module('aplicacion.controller',['aplicacion.service']);
-aplicacionController.controller('aplicacionCtrl', ['$scope', '$routeParams','$location', '$upload','aplicacionStorage', function($scope,$routeParams,$location,$upload,aplicacionStorage) {
+aplicacionController.controller('aplicacionCtrl', ['$scope', '$routeParams','$location','$window', '$upload','aplicacionStorage', function($scope,$routeParams,$location,$window,$upload,aplicacionStorage) {
 	
 	$scope.isUploading = false;
 	$scope.mensaje = '';
@@ -12,16 +12,16 @@ aplicacionController.controller('aplicacionCtrl', ['$scope', '$routeParams','$lo
 	}
 	$scope.doSave = function() {
 		$scope.saving = true;
-		$scope.aplicacion.$save(function(){ 
-			$scope.saving = false;
-			//$location.path('#/aplicacion/' + $scope.aplicacion.id); // Redirect to detail view after a save
-			$location.path('/aplicaciones'); // Redirect to detail view after a save
+		$scope.aplicacion.$save(function(data){ 			
+				$scope.saving = false;
+				//$location.path('#/aplicacion/' + $scope.aplicacion.id); // Redirect to detail view after a save
+				$location.path('/aplicaciones'); // Redirect to detail view after a save			
 		});
 	}
-	$scope.doRemove = function() {
-		$scope.aplicacion.$remove(function(){
-			$location.path('/aplicaciones');
-		});
+	$scope.doRemove = function() {		
+			$scope.aplicacion.$remove(function(){
+				$location.path('/aplicaciones');
+			});		
 	}
 
 	 $scope.onFileSelect = function($files) {
@@ -71,4 +71,5 @@ aplicacionController.controller('aplicacionCtrl', ['$scope', '$routeParams','$lo
 	      //.then(success, error, progress); 
 	    }
   	};
+
 }]);

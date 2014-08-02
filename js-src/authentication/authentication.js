@@ -1,1 +1,1 @@
-var authentication = angular.module('authentication', ['authentication.service', 'authentication.controller']);
+var authentication = angular.module('authentication', ['authentication.service', 'authentication.controller','login.controller']);

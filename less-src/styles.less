@@ -1,5 +1,10 @@
 @color: #0273b7;
 @errorColor: #CC4747;
+@successColor: #dff0d8;
+@infoColor: #1793E1;
+@warningColor: #fcf8e3;
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .navSeparator{
   border-bottom: 4px solid @color;
@@ -19,6 +24,7 @@
 }
 
 .drop-box {
+  margin: auto;
 	background: #F8F8F8;
 	border: 5px dashed #DDD;
 	width: 200px;
@@ -86,6 +92,113 @@ div.upload input {
 .nav-error{
   background-color: @errorColor;  
 }
+
+.nav-success{
+  background-color: @successColor;  
+}
+
+.nav-information{
+  background-color: @infoColor;  
+}
+.nav-warning{
+  background-color: @warningColor;  
+}
 .white-font{
   color: #fff !important; 
+}
+
+.current{
+  color:red;
+}
+
+.affix{
+  position:fixed;  
+}
+
+@charset "UTF-8";
+/*
+ * jQuery File Upload Plugin CSS 1.3.0
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
+}
+
+.loadingCotainer{
+  width: 80px;
+  height: 80px;
+}
+
+.vd_green_1{
+  color:#1fae66;
+}
+
+.pageTitle{  
+    margin-bottom: 0px !important; 
+}
+
+.userIcon{  
+    font-size: 19px;
+    margin-right: 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.imagen-perfil
+{
+  border-radius:10px; 
+  -webkit-border-radius:10px; 
+  background-color:lightgray; 
+  background-repeat:no-repeat; 
+  background-position:center; 
+  background-size:cover; 
+}
+
+.height-20{
+  height:20px;
+}
+
+.select-border{
+  border:0px;
+  border-right:1px solid #ccc;
+}
+
+.form-radius, .select-border{
+  border-radius:20px;
+}
+
+.image-radius{
+  border-radius:10px;
+}
+
+.justify{
+  text-align:justify;
 }

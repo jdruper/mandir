@@ -1,0 +1,113 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Tareas</h4></div>
+  <div class="panel-body">
+  	<div class="row">
+	  	<div class="col-md-4 col-xs-12 pull-left">
+	  		<div class="input-group">
+	  			<a class="btn btn-default btn-md" href="#/tarea/create"><span class="glyphicon glyphicon-plus"></span> Agregar Nueva</a>
+	  		</div>
+	  		<br class="visible-xs" />
+	  	</div>
+		<div class="col-md-4 col-xs-12 pull-right">
+			<div class="input-group">
+			  <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+			  <input type="text" class="form-control" placeholder="Buscar" ng-model="query">
+			</div>			
+			<br />
+			<div class="btn-group" data-toggle="buttons">
+			  <label class="btn btn-default active" ng-click="setFilter('Responsable');">
+			    <input type="radio" name="options" id="chkResponsable">Mis Tareas
+			  </label>
+			  <label class="btn btn-default" ng-click="setFilter('Asigno');">
+			    <input type="radio" name="options" id="chkAsignadas" >Asignadas por mi
+			  </label>
+			  <label class="btn btn-default" ng-click="setFilter('Todas');">
+			    <input type="radio" name="options" id="chkTodas">Todas
+			  </label>
+			</div>
+			
+			<div class="btn-group pull-right">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			    Estado <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+			    <li class="active">
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Pendiente'">
+				      <span class="badge pull-right">{{(tareas|filter:'Pendiente' |filter: tipo | filter:query).length}}</span>
+				      <small>Pendientes</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='En Progreso'">
+				      <span class="badge pull-right">{{(tareas|filter:'En Progreso'|filter: tipo | filter:query).length}}</span>
+				      <small>En Progreso</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Finalizada'">
+				      <span class="badge pull-right">{{(tareas|filter:'Finalizada'|filter: tipo | filter:query).length}}</span>
+				      <small>Finalizadas</small>
+				    </a>
+				  </li>
+				  <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado=''">
+				      <span class="badge pull-right">{{ (tareas|filter: tipo | filter:query).length }}</span>
+				      <small>Todas</small>
+				    </a>
+				  </li>				  
+			  </ul>
+			</div>			
+		</div>
+	</div>
+  </div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">{{tipo_tarea}}</h3>
+			  </div>
+			  <div class="panel-body">			   
+			<div class="list-group">
+			  <div ng-repeat="tarea in tareas | filter:tipo | filter:query | filter: estado" class="list-group-item">			  
+			   <div class="row">
+			   	<div class="col-md-10">
+			   		<span id="spanPrioridad" ng-class="{Alta: 'label label-danger pull-left', Media: 'label label-warning pull-left', Baja: 'label label-info pull-left'}[tarea.prioridad]" tooltip-placement="left" tooltip="{{tarea.prioridad}}">&nbsp;</span>			   		
+			    	<h4 class="list-group-item-heading"><a href="#/tarea/{{tarea.id}}/edit">&nbsp;{{tarea.titulo}}</a></h4>
+			    </div>
+			    <div class="col-md-2" id="divAcciones">			    
+			    	<!--<div class="col-md-4">
+			    		<a href="#/tarea/{{tarea.id}}/edit"><i class="glyphicon glyphicon-time pull-right"></i></a>	
+			    	</div>-->
+			    	<div class="col-md-6">
+			    		<a href="#/tarea/{{tarea.id}}/edit" ng-show="(tarea.id_usuario_asigno == user_id || isAdmin)"><i class="glyphicon glyphicon-pencil pull-right" tooltip-placement="bottom" tooltip="Editar"></i></a>
+			    	</div>
+			    	<div class="col-md-6">
+			    		<a href="#/tarea/{{tarea.id}}/edit?estado={{tarea.estado}}"><i class="glyphicon glyphicon-check pull-right" tooltip-placement="bottom" tooltip="Cambiar Estado"></i></a>	
+			    	</div>
+			    </div>
+			   </div>			   			 
+			    <p class="list-group-item-text">{{tarea.descripcion}}</p>		
+			    <br />
+			    <div class="row">
+			    	<div class="col-md-6">			    	
+			    		<p class="list-group-item-text pull-left"><small><i>estado: {{tarea.estado}}</i></small></p>
+			    		<br />
+			    		<p class="list-group-item-text pull-left"><small><i>fecha de entrega: {{tarea.fecha_entrega}}</i></small></p>
+			    	</div>
+			    	<div class="col-md-6">			    	
+			    		<p class="list-group-item-text pull-right"><small><i>responsable: {{tarea.usuario_responsable}}</i></small></p>	
+			    		<br />	    
+			    		<p class="list-group-item-text pull-right"><small><i>asignado por: {{tarea.usuario_asigno}}</i></small></p>    
+			    	</div>
+
+			    </div>
+			  </div>
+			</div>
+			</div>
+		   </div>			
+		</div><!--col-md-10 lista de tareas -->		
+	</div>
+</div>

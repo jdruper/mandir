@@ -1,0 +1,22 @@
+<!--
+<h2>Operaciones List</h2>
+<table class="table table-striped">                                                                                                                                                                    
+	<tr ng-repeat="categoria in categorias">
+		<td><a href="#/operacion/{{categoria.id}}">{{categoria.id}}</a></td>
+		<td>{{categoria.nombre}}</td>
+	</tr>
+</table>
+<a href="#/operacion/create">Create</a> 
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="affix" affix-menu affix-menu-data="categorias">
+            </div>    
+        </div>
+        <div class="col-md-9 content">
+            <h2>Manual de Operaciones</h2>
+            <affix-content affix-content-data="categorias">
+        </div>
+    </div>
+</div>

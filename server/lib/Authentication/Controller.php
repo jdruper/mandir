@@ -9,4 +9,8 @@ class Authentication_Controller {
 	public static function logout() {		
 		session_unset();
 	}	
+
+	public static function getUsers() {		
+		echo json_encode(Authentication_Storage::getUsers() );
+	}	
 }

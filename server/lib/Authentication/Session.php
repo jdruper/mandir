@@ -6,24 +6,30 @@
         return isset($_SESSION['userid']);
     }
 
-    function check_token(){
+     function check_token(){
         $token = '';
         foreach($_SERVER as $key => $value) {
             //if (substr($key, 0, 5) <> 'HTTP_') {
             //    continue;
             //}            
             //$header = str_replace(' ', '-', ucwords(str_replace('_', ' ', strtolower(substr($key, 5)))));
-            if($key == 'Authorization'){
+            if($key == 'Authorization'){                
                 $token = $value;                
                 break;
             }        
-        }
-        if($token != ''){            
-            if(isset($_SESSION['userid']) && ($_SESSION['userid']['token']==$token)){
+        }        
+        if($token != ''){        
+            //var_dump($_SESSION['userid']['token']);
+            if(isset($_SESSION['userid']) && ($_SESSION['userid']['token']==$token)){                
                 return true;
             }         
+            else{
+                session_unset();
+                return false;
+            }
         }
-        else{
+        else{            
+            session_unset();
             return false;
         }
     }

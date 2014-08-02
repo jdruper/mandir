@@ -1,0 +1,95 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Agregar Tarea</h4></div>  
+  <div class="panel-body" ng-show="tarea.id_usuario_asigno == user_id || isAdmin">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 pull-left">
+        <div class="input-group">
+          <button ng-confirm-click="¿Está seguro que desea eliminar la tarea?" confirmed-click="doRemove()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>          
+        </div>        
+      </div>    
+  </div>
+  </div>
+</div>        
+<div class="container">
+    <div class="row">      
+      <div class="col-md-12">
+		<form role="form" ng-submit="doSave()">
+    	<fieldset>    
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                  
+                    <div class="form-group">
+                      <label class="control-label" for="txtTitulo">*T&iacute;tulo</label>
+                      <input id="txtNombre" ng-model="tarea.titulo" tabindex="1" type="text" class="form-control" placeholder="Ingrese el T&iacute;tulo de la Tarea" required autofocus ng-disabled="!isAdmin && tarea.id_usuario_asigno != user_id">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                       <div class="form-group">
+                          <label class="control-label" for="sltResponsable">*Responsable</label>                        
+                          <select id="sltResponsable" ng-model="tarea.id_usuario_responsable" class="form-control" required tabindex="2" ng-disabled="!isAdmin && tarea.id_usuario_asigno != user_id">                                                  	
+                            <option ng-repeat="usuario in usuarios" value="{{usuario.id}}" ng-value="usuario.id">{{ usuario.nombre }}</option>
+                          </select>
+                        </div>
+                </div>
+              </div>              
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                                    
+                    <div class="form-group">
+                          <label class="control-label" for="sltPrioridad">*Prioridad:</label>                          
+                            <select id="sltPrioridad" ng-model="tarea.prioridad" tabindex="3" class="form-control" required ng-disabled="!isAdmin && tarea.id_usuario_asigno != user_id">
+                              <option value="Alta" selected="selected">Alta</option>
+                              <option value="Media">Media</option>
+                              <option value="Baja">Baja</option>                              
+                            </select>                          
+                  </div>
+                </div>               
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- Text input-->
+                    <div class="form-group">
+                      <label class="control-label" for="txtFechaEntrega">Fecha de Entrega
+                      </label>                          
+                      <input id="txtFechaEntrega" ng-model="tarea.fecha_entrega" tabindex="4" type="date" class="form-control" ng-disabled="!isAdmin && tarea.id_usuario_asigno != user_id"></textarea>
+                    </div> 
+                </div>
+              </div>                              
+              <div class="row">                              
+                <div class="col-md-6 col-sm-6 col-xs-12">                                    
+                    <div class="form-group">
+                          <label class="control-label" for="sltEstado">*Estado:</label>                          
+                            <select id="sltEstado" ng-model="tarea.estado" tabindex="3" class="form-control" required >
+                              <option value="Pendiente">Pendiente</option>
+                              <option value="En Progreso">En Progreso</option>
+                              <option value="Finalizada">Finalizada</option>
+                            </select>                          
+                  </div>
+                </div>               
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- Text input-->
+                    <div class="form-group">
+                      <label class="control-label" for="txtDescripcion">*Descripción</label>                          
+                      <textarea id="txtDescripcion" ng-model="tarea.descripcion" tabindex="4" type="text" placeholder="Ingrese la descripción de la tarea" class="form-control" required ng-disabled="!isAdmin && tarea.id_usuario_asigno != user_id"></textarea>
+                    </div> 
+                </div>
+              </div>                              
+              <div class="row" ng-show="tarea.estado == 'Finalizada'">                                              
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- Text input-->
+                    <div class="form-group">
+                      <label class="control-label" for="txtComentarios">Comentarios</label>                          
+                      <textarea id="txtComentarios" ng-model="tarea.comentarios" tabindex="4" type="text" placeholder="Ingrese un comentario sobre la tarea" class="form-control"></textarea>
+                    </div> 
+                </div>
+               </div>
+              <div class="form-group text-right">
+                <button id="btnGuardar" type="submit" tabindex="22" class="btn btn-primary">Guardar</button>
+              </div>                  
+            </fieldset>
+          </form> 
+          </div>
+          </div>
+         </div> <!--container -->                
+    <script>
+  $(document).ready(function() {
+    $("#txtDescripcion").autoGrow();
+    $("#txtComentarios").autoGrow();
+  });
+</script>

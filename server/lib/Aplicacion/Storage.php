@@ -2,11 +2,16 @@
 require_once  (dirname(dirname(__FILE__))."/Common/connectDB.php");
 class Aplicacion_Storage {
 	protected static $_db = NULL;
-	protected static $_collection = NULL;		
+	protected static $_collection = NULL;			
 	
 	protected static function _init() {
-		if(!self::$_db) {			
-			self::$_db = getDB();
+		if(check_token()){
+			if(!self::$_db) {			
+				self::$_db = getDB();
+			}
+		}
+		else{
+			Flight::redirect('http://test.mandir.com/login', 401);
 		}		
 	}
 	public static function all() {
@@ -55,8 +60,8 @@ class Aplicacion_Storage {
                 array_push($apps, $app);
             }
 
-        closeDB(self::$_db);
-		return array_values($apps);	
+        closeDB(self::$_db);        
+		return array_values($apps);
 	}
 	public static function create($data) {
 		self::_init();
@@ -160,6 +165,8 @@ class Aplicacion_Storage {
 
 		$app['estudios'] = self::findEstudios($id);            	
 		closeDB(self::$_db);
+		
+
 		return $app;	
 	}
 
@@ -261,7 +268,7 @@ class Aplicacion_Storage {
 
         self::update_lugares($id,$data);
 
-       	//closeDB();
+       	//closeDB();       	
 		return true;
 	}
 
@@ -288,7 +295,7 @@ class Aplicacion_Storage {
                 	return false;
             	}
 			
-			}			
+			}				
 
 		return true;
 	}
@@ -308,7 +315,8 @@ class Aplicacion_Storage {
                 die("Database query failed: " . $statement->error);
                 return false;
             }
-        closeDB(self::$_db);
+        closeDB(self::$_db);        
+		
 		return true;
 	}
 }

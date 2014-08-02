@@ -1,11 +1,12 @@
 <?php
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/certificados/composer/PHP-JWT/Authentication/JWT.php';
+require_once (dirname(dirname(__FILE__)).'/Authentication/Session.php');
 include('class.upload.php');
 
-$allowedExts = array("gif", "jpeg", "jpg", "png");
-$temp = explode(".", $_FILES["file"]["name"]);
-$extension = end($temp);
-array_pop($temp);
+$allowedExts = array("gif", "jpeg", "jpg", "png","JPG","JPEG","PNG","GIF");
+$tempFileName = explode(".", $_FILES["file"]["name"]);
+$extension = strtolower(end($tempFileName));
+array_pop($tempFileName);
 
 
 if ((($_FILES["file"]["type"] == "image/gif")
@@ -23,38 +24,59 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
   else
     {    
-    if (file_exists("../../../upload/" . $_FILES["file"]["name"]))
-      {
-      echo $_FILES["file"]["name"] . " already exists. ";
-      }
-    else
-      {
-        move_uploaded_file($_FILES["file"]["tmp_name"],
-        "../../../upload/" . $_FILES["file"]["name"]);
+    // if (file_exists("../../../upload/" . $_FILES["file"]["name"]))
+    //   {
+    //   echo $_FILES["file"]["name"] . " already exists. ";
+    //   }
+    // else
+    //   {        
+        //move_uploaded_file($_FILES["file"]["tmp_name"],
+        $ruta = $_SERVER['DOCUMENT_ROOT'] ."/certificados/archivos/";
+        $nombreImagen = generarNombreImagen($ruta, $extension);        
+        $rutaFN = $ruta.$nombreImagen.'.'.$extension;        
+        $rutaFNThumb = $ruta."temp_".$nombreImagen.'.'.$extension;                
+        move_uploaded_file($_FILES["file"]["tmp_name"], $rutaFN);
 
-        if (!copy("../../../upload/" . $_FILES["file"]["name"], "../../../upload/thumb_" . $_FILES["file"]["name"])) {
-          echo "error";
-        }
-        $handle = new upload("../../../upload/thumb_" . $_FILES["file"]["name"]);
+        if (!copy($rutaFN, $rutaFNThumb)) {
+           echo "error";
+         }
+         $handle = new upload($rutaFNThumb);        
+
         if ($handle->uploaded) {
-            //$handle->file_new_name_body   =  'thumb_'.$temp[0];
+            $handle->file_new_name_body   =  'thumb_'.$nombreImagen;
+            //$handle ->file_overwrite      = true;
             $handle->image_resize         = true;
-            $handle->image_x              = 150;
+            $handle->image_x              = 240;
             $handle->image_ratio_y        = true;
-            $handle->process('../../../upload/');            
-            if ($handle->processed) {
-                echo $_FILES["file"]["name"];
+            $handle->process($ruta);            
+            if ($handle->processed) {                
+                echo $handle->file_dst_name;
                 $handle->clean();
             } else {
                 echo 'error : ' . $handle->error;
             }
         }
 
-      }            
+    //  }            
     }
   }
 else
   {
   echo "Invalid file";
+  }
+
+  function generarNombreImagen($ruta, $extension){
+
+    $user = get_user_data();
+    $index = 0;
+    $nImagen = 'perfil'.$user['id_perfil'].'_';    
+    $temp = $ruta. $nImagen. $index. '.'. $extension;
+      
+    while(file_exists($temp)){
+      $index++;
+      $temp = $ruta. $nImagen. $index. '.'. $extension;      
+    }
+
+    return $nImagen.$index;
   }
 ?>

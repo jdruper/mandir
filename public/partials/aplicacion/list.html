@@ -3,9 +3,9 @@
   <div class="panel-body">
   	<div class="row">
 	  	<div class="col-md-4 col-xs-12 pull-left">
-	  		<div class="input-group">
+	  		<!--<div class="input-group">
 	  			<a class="btn btn-default btn-md" href="#/aplicacion/create"><span class="glyphicon glyphicon-plus"></span> Agregar Nueva</a>  	
-	  		</div>
+	  		</div>-->
 	  		<br class="visible-xs" />
 	  	</div>
 		<div class="col-md-4 col-xs-12 pull-right">
@@ -19,39 +19,39 @@
 			    Estado <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
-			    <li class="active">
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query=''">
-				      <span class="badge pull-right">{{ aplicaciones.length }}</span>
+			    <li>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado=''">
+				      <span class="badge pull-right">{{ (aplicaciones|filter:query).length }}</span>
 				      <small>Todas</small>
 				    </a>
 				  </li>
-				  <li>
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Aprobado'">
-				      <span class="badge pull-right">{{(aplicaciones|filter:'Aprobado').length}}</span>
+				  <li class="active">
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Aprobado'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Aprobado'|filter:query).length}}</span>
 				      <small>Aprobadas</small>
 				    </a>
 				  </li>
 				  <li>
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Pendiente'">
-				      <span class="badge pull-right">{{(aplicaciones|filter:'Pendiente').length}}</span>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Pendiente'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Pendiente'|filter:query).length}}</span>
 				      <small>Pendientes</small>
 				    </a>
 				  </li>
 				  <li>
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Rechazado'">
-				      <span class="badge pull-right">{{(aplicaciones|filter:'Rechazado').length}}</span>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Rechazado'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Rechazado'|filter:query).length}}</span>
 				      <small>Rechazadas</small>
 				    </a>
 				  </li>
 				  <li>
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='Lista de Espera'">
-				      <span class="badge pull-right">{{(aplicaciones|filter:'Lista de Espera').length}}</span>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='Lista de Espera'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'Lista de Espera'|filter:query).length}}</span>
 				      <small>Lista de Espera</small>
 				    </a>
 				  </li>
 				  <li>
-				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="query='No lo va a hacer'">
-				      <span class="badge pull-right">{{(aplicaciones|filter:'No lo va a hacer').length}}</span>
+				    <a href="javascript:void(0);" onclick="$(this).parent().parent().find('.active').removeClass('active'); $(this).parent().addClass('active');preventDefault();" ng-click="estado='No lo va a hacer'">
+				      <span class="badge pull-right">{{(aplicaciones|filter:'No lo va a hacer'|filter:query).length}}</span>
 				      <small>No lo va a hacer</small>
 				    </a>
 				  </li>
@@ -92,7 +92,7 @@
 	    </th>	    
 	    <th><p class="text-center">Editar</th>	    
     </tr>
-	<tr ng-repeat="aplicacion in aplicaciones | filter:query |orderBy:orderByField:reverseSort">
+	<tr ng-repeat="aplicacion in aplicaciones | filter:estado | filter:query |orderBy:orderByField:reverseSort">
 		<td><a href="#/aplicacion/{{aplicacion.id}}/edit">{{aplicacion.nombre +' '+aplicacion.apellidos}}</a></td>		
 		<td>{{aplicacion.correo_electronico}}</td>
 		<td>{{aplicacion.telefono_celular}}</td>
