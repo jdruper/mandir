@@ -1,4 +1,16 @@
 @charset "UTF-8";
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.content {
+  padding-bottom: 43px;
+}
 .nav,
 .pagination,
 .carousel,
@@ -175,6 +187,9 @@ div.upload input {
 .justify {
   text-align: justify;
 }
-.test {
-  color: grey;
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
