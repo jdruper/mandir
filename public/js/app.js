@@ -50,7 +50,7 @@ aplicacionService.factory("aplicacionStorage", [ "$resource", function(a) {
     return a("/aplicaciones");
 } ]);
 
-var mandirAdminApp = angular.module("mandirAdmin", [ "ngRoute", "aplicacion", "authentication", "tarea", "operacion", "perfil", "ui.bootstrap", "directives" ]);
+var mandirAdminApp = angular.module("mandirAdmin", [ "ngRoute", "aplicacion", "authentication", "tarea", "operacion", "perfil", "ui.bootstrap", "directives", "textAngular" ]);
 
 mandirAdminApp.factory("authInterceptor", [ "$rootScope", "$q", "$window", function(a, b, c) {
     return {

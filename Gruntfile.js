@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 			vendor: {
 				files: {
 					"public/js/vendor.js": [
-						'bower_components/jquery/jquery.js',
+						'bower_components/jquery/dist/jquery.js',
 						'bower_components/ng-file-upload/angular-file-upload-shim.min.js',
 						'bower_components/angular/angular.js',
                         'bower_components/angular-resource/angular-resource.js',
@@ -26,9 +26,12 @@ module.exports = function(grunt) {
                         'bower_components/ng-file-upload/angular-file-upload.min.js',
 						'bower_components/bootstrap/dist/js/bootstrap.js',
 						'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+						'bower_components/angular-bootstrap/ui-bootstrap.js',
 						'bower_components/autogrowtextarea/jquery.autogrowtextarea.min.js',						
 						'bower_components/jquery/jquery.validate.min.js',
-						'bower_components/prettyPhoto/js/jquery.prettyPhoto.js'												
+						'bower_components/prettyPhoto/js/jquery.prettyPhoto.js',											
+						'bower_components/textAngular/dist/textAngular.min.js',												
+						'bower_components/textAngular/dist/textAngular-sanitize.min.js'										
 					]
 				}
 			}

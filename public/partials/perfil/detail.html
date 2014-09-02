@@ -104,10 +104,8 @@
         <div class="row">
           <div class="col-sm-10 mgbt-xs-20">
             <h3 class="mgbt-xs-15 font-semibold"><i class="fa fa-file-text-o mgr-10 profile-icon"></i> BIOGRAF&Iacute;A</h3>
-            <div class="content-list content-menu">
-              <p class="justify">
-              	{{perfil.biografia}}
-              </p>
+            <div class="content-list content-menu" ng-bind-html="perfil.biografia">
+              <!-- <p class="justify" ></p> -->
             </div>
           </div>          
         </div>

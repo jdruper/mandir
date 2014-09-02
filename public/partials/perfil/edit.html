@@ -153,22 +153,6 @@
                               <!-- col-sm-10 --> 
                             </div>
                             <!-- form-group -->
-                            
-                            <div class="form-group">
-                              <label class="col-sm-3 control-label">Biografía</label>
-                              <div class="col-sm-9 controls">
-                                <div class="row mgbt-xs-0">
-                                  <div class="col-xs-9">
-                                    <textarea id="txtaBio" ng-model="perfil.biografia" rows="3"></textarea>
-                                  </div>
-                                  <!-- col-xs-12 -->                                  
-                                </div>
-                                <!-- row --> 
-                              </div>
-                              <!-- col-sm-10 --> 
-                            </div>
-                            <!-- form-group -->
-
                             <div class="form-group">
                               <label class="col-sm-3 control-label">Certificación</label>
                               <div class="col-sm-9 controls">
@@ -200,8 +184,24 @@
                               </div>
                               <!-- col-sm-10 --> 
                             </div>
-                            <!-- form-group -->                                                      
-                            
+                            <!-- form-group -->  
+
+
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Biografía</label>
+                              <div class="col-sm-9 controls">
+                                <div class="row mgbt-xs-0">
+                                  <div class="col-xs-9">
+                                    <text-angular ng-model="perfil.biografia" ta-toolbar="[['h1','h2','h3', 'h4', 'p'],['quote', 'bold','italics', 'underline'], ['ul', 'ol'], ['justifyLeft', 'justifyCenter', 'justifyRight'], ['insertLink']]"></text-angular>
+                                  </div>
+                                  <!-- col-xs-12 -->                                  
+                                </div>
+                                <!-- row --> 
+                              </div>
+                              <!-- col-sm-10 --> 
+                            </div>
+                            <!-- form-group -->
+                                                                                
                             <hr/>
                             <h3 class="mgbt-xs-15">Configuración de Contacto</h3>
 
