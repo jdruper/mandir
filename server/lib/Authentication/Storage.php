@@ -1,5 +1,6 @@
 <?php
 require_once  (dirname(dirname(__FILE__))."/Common/connectDB.php");
+require_once (dirname(dirname(__FILE__))."/Common/swiftmailer-master/lib/swift_required.php");
 
 class Authentication_Storage {
 	protected static $_db = NULL;
@@ -26,6 +27,7 @@ class Authentication_Storage {
 										  WHERE U.username=? AND U.password=?");
 
 		$statement->bind_param("ss", $data['username'],$data['password']);		
+
         $statement->execute();               
 
         if($statement->error)
@@ -57,6 +59,76 @@ class Authentication_Storage {
 		//var_dump($decoded);       		   
 		return array('auth'=>$jwt, 'username' => $data['username'], 'roleid' => $roleId, 'userid' => $userId, 'id_perfil'=> $id_perfil, 'img_url'=>$img_url);
 	}	
+
+	public static function changePassword($data) {
+		self::_init();
+
+		$resultado = true;
+
+		$statement = self::$_db->prepare("SET CHARACTER SET utf8");
+        $statement->execute();
+
+        $statement = self::$_db->prepare("SELECT email
+										  FROM perfiles
+										  WHERE email=?");
+		
+        $statement->bind_param("s", $data["email"]);
+        $statement->execute(); 
+
+        if($statement->error)
+            {
+                var_dump("Database query failed: " . $statement->error);
+                $resultado = null;
+            };
+
+        $statement->bind_result($email);
+
+        $statement = null;
+
+        if ($statement->fetch() === null) {
+
+        	$resultado = false;
+
+        } else {
+
+        	$newPass = bin2hex(openssl_random_pseudo_bytes(5));
+
+        	$statement = self::$_db->prepare("SET CHARACTER SET utf8");
+	        $statement->execute();
+
+	        $statement = self::$_db->prepare("UPDATE users
+											  SET password=?
+											  WHERE username=?");
+
+	        var_dump($statement);
+			
+	        $statement->bind_param("ss", $newPass, $data["email"]);
+
+	        if ($statement->execute()) {
+
+				$transport = Swift_SmtpTransport::newInstance('gator4043.hostgator.com', 465, "ssl")
+				  ->setUsername('password@yoga-mandir.com')
+				  ->setPassword('p@ssw0rd');
+
+				$mailer = Swift_Mailer::newInstance($transport);
+
+				$message = Swift_Message::newInstance('Recuparación de contraseña')
+				  ->setFrom(array('password@yoga-mandir.com' => 'Yoga Mandir'))
+				  ->setTo(array($data['email']))
+				  ->setBody('Hola, su nueva contraseña es: '.$newPass);
+
+				$result = $mailer->send($message);
+        	} else {
+
+        		$resultado = null;
+
+        	}
+        }
+
+        closeDB(self::$_db);
+        
+        return array('isTrue'=>$resultado);
+    }
 
 	public static function getUsers() {
 		self::_init();				

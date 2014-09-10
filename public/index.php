@@ -25,6 +25,7 @@ else{
 Flight::route('POST /login', array('Authentication_Controller','authorize') );
 Flight::route('PUT /login', array('Authentication_Controller','logout') ); 
 Flight::route('GET /login', array('Authentication_Controller','getUsers') ); 
+Flight::route('POST /authentication', array('Authentication_Controller','changePassword') );
 
 Flight::route('GET /aplicaciones', array('Aplicacion_Controller','all') ); 
 Flight::route('PUT /aplicacion', array('Aplicacion_Controller','create') ); 

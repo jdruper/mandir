@@ -10,6 +10,15 @@ authenticationService.factory('authenticationStorage',
 			});
 		}
 	]
+).factory('PasswordService',
+	[
+		'$resource',
+		function($resource) {			
+			return $resource('authentication', null, {
+				'changePassword': {method:'POST'}
+			});
+		}
+	]
 );
 
 authenticationService.service('UserService', [function($window) {

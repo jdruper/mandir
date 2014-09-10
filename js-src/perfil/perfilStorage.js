@@ -9,8 +9,7 @@ perfilService.factory('perfilStorage',
 			});
 		}
 	]
-);
-perfilService.factory('perfilList',
+).factory('perfilList',
 	[
 		'$resource',
 		function($resource) {

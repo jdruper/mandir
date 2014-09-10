@@ -1,5 +1,5 @@
 authenticationController = angular.module('login.controller',['authentication.service']);
-authenticationController.controller('loginCtrl', ['$scope', '$routeParams', '$location','$window','UserService', 'authenticationStorage', function($scope,$routeParams,$location,$window, User, authenticationStorage) {		
+authenticationController.controller('loginCtrl', ['$scope', '$routeParams', '$location','$window', '$modal', 'UserService', 'authenticationStorage', 'PasswordService', function($scope,$routeParams,$location,$window, $modal, User, authenticationStorage, PasswordService) {		
 		
 	$scope.user = new authenticationStorage;
 	$scope.mensaje = '';
@@ -36,5 +36,57 @@ authenticationController.controller('loginCtrl', ['$scope', '$routeParams', '$lo
 
 		});		
 	}
+
+	$scope.open = function (size) {
+
+	    var modalInstance = $modal.open({
+	      templateUrl: '/partials/modals/olvidoPassword.html',
+	      controller: 'changePasswordModalCtrl',
+	      size: size,
+	      backdrop: 'static',
+	      resolve: {
+	        items: function () {
+	          return $scope.items;
+	        }
+	      }
+	    });
+
+	};
+}]).controller('changePasswordModalCtrl', ['$scope', '$routeParams', '$location','$window', '$modal', '$modalInstance', 'UserService', 'authenticationStorage', 'PasswordService', '$timeout', function($scope,$routeParams,$location,$window, $modal, $modalInstance, User, authenticationStorage, PasswordService, $timeout) {  
+
+	$scope.user2 = new PasswordService;
+	$scope.mensaje = '';
+	$scope.show = false;
+	$scope.success = false;
+
+	$scope.close = function() {  
+
+		$modalInstance.dismiss();
+
+	};   
+
+	$scope.sendMail = function() {   
+
+		$scope.user2.$changePassword(function(data) {
+			if (data.isTrue == true) {
+				$scope.show = false;
+				$scope.successClase = 'fadeIn';
+				$scope.success = true;
+				$timeout(function() {
+					$modalInstance.dismiss();
+				}, 3000);
+			}
+			else {
+				$scope.clase = 'fadeIn';
+				$scope.show = true;
+				$timeout(function() {
+					$scope.clase = 'fadeOut';
+				}, 2800);
+				$timeout(function() {
+					$scope.show = false;
+				}, 3500);
+			}
+		});
+	};   
 
 }]);

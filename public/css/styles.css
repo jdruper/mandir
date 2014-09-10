@@ -193,3 +193,128 @@ footer {
   left: 0;
   width: 100%;
 }
+.cf:before {
+  content: '';
+  display: table;
+}
+.cf:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.modal-header h3 {
+  color: #5e656b;
+}
+.modal-body {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.spanError {
+  color: #9a272f;
+  margin-top: 10px;
+}
+.modal-header {
+  background: #dcdcdd;
+}
+.modal-footer {
+  background: white;
+}
+.spanEx {
+  display: block;
+  font-size: 11px;
+}
+.clickOut {
+  float: right;
+  font-size: 27px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
+  color: black;
+}
+.flotado {
+  float: left;
+}
+.modal-header .icon {
+  font-size: 35px;
+  margin-right: 20px;
+}
+.modal-footer .btnAzul {
+  background: #0e4585 !important;
+  border: none;
+}
+.animated.fadeIn,
+.animated.fadeOut {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1.3s;
+  -moz-animation-duration: 1.3s;
+  -ms-animation-duration: 1.3s;
+  -o-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+.emailMsg {
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 15px 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+.errorEmail {
+  background: #f64657;
+}
+.sentEmail {
+  background: #dff0d9;
+  color: #3e753f;
+}
+.errorEmail span.icon,
+.sentEmail span.icon {
+  font-size: 25px;
+  float: left;
+}
+.ng-valid-email + span {
+  display: none !important;
+}

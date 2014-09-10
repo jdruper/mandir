@@ -50,7 +50,7 @@ aplicacionService.factory("aplicacionStorage", [ "$resource", function(a) {
     return a("/aplicaciones");
 } ]);
 
-var mandirAdminApp = angular.module("mandirAdmin", [ "ngRoute", "aplicacion", "authentication", "tarea", "operacion", "perfil", "ui.bootstrap", "directives", "textAngular" ]);
+var mandirAdminApp = angular.module("mandirAdmin", [ "ngRoute", "aplicacion", "authentication", "tarea", "operacion", "perfil", "ui.bootstrap", "ui.bootstrap.tpls", "directives" ]);
 
 mandirAdminApp.factory("authInterceptor", [ "$rootScope", "$q", "$window", function(a, b, c) {
     return {
@@ -147,6 +147,12 @@ authenticationService.factory("authenticationStorage", [ "$resource", function(a
             isArray: !0
         }
     });
+} ]).factory("PasswordService", [ "$resource", function(a) {
+    return a("authentication", null, {
+        changePassword: {
+            method: "POST"
+        }
+    });
 } ]), authenticationService.service("UserService", [ function() {
     var a = this;
     this.user = {}, this.setUsername = function(b) {
@@ -161,16 +167,42 @@ authenticationService.factory("authenticationStorage", [ "$resource", function(a
         return a.user;
     };
 } ]), authenticationController = angular.module("login.controller", [ "authentication.service" ]), 
-authenticationController.controller("loginCtrl", [ "$scope", "$routeParams", "$location", "$window", "UserService", "authenticationStorage", function(a, b, c, d, e, f) {
-    a.user = new f(), a.mensaje = "", a.login = function() {
+authenticationController.controller("loginCtrl", [ "$scope", "$routeParams", "$location", "$window", "$modal", "UserService", "authenticationStorage", "PasswordService", function(a, b, c, d, e, f, g) {
+    a.user = new g(), a.mensaje = "", a.login = function() {
         a.user.$authorize(function(b) {
-            console.log(b), null != b.auth ? (e.setLoggedIn(!0), e.setUsername(b.username), 
-            e.setUserId(b.userid), e.setRoleId(b.roleid), d.sessionStorage.token = b.auth, d.sessionStorage.username = b.username, 
+            console.log(b), null != b.auth ? (f.setLoggedIn(!0), f.setUsername(b.username), 
+            f.setUserId(b.userid), f.setRoleId(b.roleid), d.sessionStorage.token = b.auth, d.sessionStorage.username = b.username, 
             d.sessionStorage.roleid = b.roleid, d.sessionStorage.loggedIn = !0, d.sessionStorage.userid = b.userid, 
             d.sessionStorage.id_perfil = b.id_perfil, d.sessionStorage.img_url = b.img_url, 
             d.location.href = "http://yoga-mandir.com/certificados/#/perfil/" + b.id_perfil + "/edit") : (a.mensaje = "Usuario o password incorrecto", 
-            e.isLogged = !1, e.username = "", delete d.sessionStorage.token, delete d.sessionStorage.username, 
+            f.isLogged = !1, f.username = "", delete d.sessionStorage.token, delete d.sessionStorage.username, 
             delete d.sessionStorage.loggedIn, delete d.sessionStorage.roleid, delete d.sessionStorage.userid);
+        });
+    }, a.open = function(b) {
+        e.open({
+            templateUrl: "/partials/modals/olvidoPassword.html",
+            controller: "changePasswordModalCtrl",
+            size: b,
+            backdrop: "static",
+            resolve: {
+                items: function() {
+                    return a.items;
+                }
+            }
+        });
+    };
+} ]).controller("changePasswordModalCtrl", [ "$scope", "$routeParams", "$location", "$window", "$modal", "$modalInstance", "UserService", "authenticationStorage", "PasswordService", "$timeout", function(a, b, c, d, e, f, g, h, i, j) {
+    a.user2 = new i(), a.mensaje = "", a.show = !1, a.success = !1, a.close = function() {
+        f.dismiss();
+    }, a.sendMail = function() {
+        a.user2.$changePassword(function(b) {
+            1 == b.isTrue ? (a.show = !1, a.successClase = "fadeIn", a.success = !0, j(function() {
+                f.dismiss();
+            }, 4e3)) : (a.clase = "fadeIn", a.show = !0, j(function() {
+                a.clase = "fadeOut";
+            }, 2800), j(function() {
+                a.show = !1;
+            }, 3500));
         });
     };
 } ]), affixDirectives = angular.module("directives.affix", []), affixDirectives.directive("affixMenu", [ function() {
@@ -363,7 +395,7 @@ perfilListController.controller("perfilListCtrl", [ "$scope", "$routeParams", "p
             method: "PUT"
         }
     });
-} ]), perfilService.factory("perfilList", [ "$resource", function(a) {
+} ]).factory("perfilList", [ "$resource", function(a) {
     return a("perfiles");
 } ]);
 

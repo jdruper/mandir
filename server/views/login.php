@@ -69,7 +69,7 @@
                             </div>
                           </div>
                           <div class="col-xs-6 text-right">
-                            <div class=""> <a href="#">&iquest;Olvid&oacute; su contrase&ntilde;a? </a> </div>
+                            <div class=""> <a ng-click="open()" href="#">&iquest;Olvid&oacute; su contrase&ntilde;a? </a> </div>
                           </div>
                         </div>
                       </div>

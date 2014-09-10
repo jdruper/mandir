@@ -30,8 +30,10 @@ module.exports = function(grunt) {
 						'bower_components/autogrowtextarea/jquery.autogrowtextarea.min.js',						
 						'bower_components/jquery/jquery.validate.min.js',
 						'bower_components/prettyPhoto/js/jquery.prettyPhoto.js',											
-						'bower_components/textAngular/dist/textAngular.min.js',												
-						'bower_components/textAngular/dist/textAngular-sanitize.min.js'										
+						// 'bower_components/textAngular/dist/textAngular-sanitize.min.js',
+						// 'bower_components/textAngular/dist/textAngular.min.js'											
+						// 'bower_components/angular-animate/angular-animate.min.js',
+						// 'bower_components/message-center-master/message-center.js'
 					]
 				}
 			}
@@ -50,7 +52,8 @@ module.exports = function(grunt) {
 						'bower_components/vendroid/theme.min.less',
 						'bower_components/vendroid/chrome.css.less',						
 						'bower_components/vendroid/theme-responsive.min.less',												
-						'bower_components/prettyPhoto/css/prettyPhoto.css'												
+						'bower_components/prettyPhoto/css/prettyPhoto.css',
+						'bower_components/angular-message-center/dist/message-center.css'
 					]
 
 				}

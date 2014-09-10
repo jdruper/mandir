@@ -8,8 +8,11 @@ var mandirAdminApp = angular.module(
     'operacion',
     'perfil',
     'ui.bootstrap',
-    'directives',
-    'textAngular'
+    'ui.bootstrap.tpls',
+    'directives'
+    // 'ngAnimate'
+    // 'textAngular'
+    // 'MessageCenterModule'
 		//ModuleInsertReference
 	]
 );
