@@ -89,19 +89,14 @@ class Authentication_Storage {
         	$resultado = false;
 
         } else {
-        	
+
         	$statement->close();
 
         	$newPass = bin2hex(openssl_random_pseudo_bytes(5));
 
-        	// $statement = self::$_db->prepare("SET CHARACTER SET utf8");
-	        // $statement->execute();
-
 	        $statement = self::$_db->prepare("UPDATE users
 											  SET password=?
 											  WHERE username=?");
-
-	        // var_dump($statement);
 			
 	        $statement->bind_param("ss", $newPass, $data["email"]);
 
