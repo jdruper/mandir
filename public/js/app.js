@@ -198,7 +198,7 @@ authenticationController.controller("loginCtrl", [ "$scope", "$routeParams", "$l
         a.user2.$changePassword(function(b) {
             1 == b.isTrue ? (a.show = !1, a.successClase = "fadeIn", a.success = !0, j(function() {
                 f.dismiss();
-            }, 4e3)) : (a.clase = "fadeIn", a.show = !0, j(function() {
+            }, 3e3)) : (a.clase = "fadeIn", a.show = !0, j(function() {
                 a.clase = "fadeOut";
             }, 2800), j(function() {
                 a.show = !1;
